@@ -13,10 +13,8 @@ public class EchoClient {
 			System.out.println("Connection Established");
 			Socket soc = new Socket("localhost", 8989);
 			
-			//read number from keyboard
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("Enter the number");
-			//as inputstreamreader will give and read the string value so parse int will convert string value to integer
+			System.out.println("Enter the size");
 			int number = Integer.parseInt(br.readLine());
 			PrintWriter pw = new PrintWriter(soc.getOutputStream(),true);
 			pw.println(number);

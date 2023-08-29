@@ -17,12 +17,11 @@ public class EchoServer {
 			Socket soc = ss.accept();
 			System.out.println("Connection established");
 			
-			//get the number from client
 			BufferedReader br = new BufferedReader(new InputStreamReader(soc.getInputStream()));
-			//to convert string value to integer
 			int number = Integer.parseInt(br.readLine());
-			PrintWriter pw = new PrintWriter(soc.getOutputStream(),true);
-			System.out.println("Factorial of " +number + " is: " + calculateFactorial(number));
+			PrintWriter pw = new PrintWriter(soc.getOutputStream(), true);
+			System.out.println(calculateFibonacii(number));
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -30,13 +29,19 @@ public class EchoServer {
 		}
 		
 	}
-	static int calculateFactorial(int number) {
+	static String calculateFibonacii(int number) {
 		
-		int fact =  1;
-		for(int i=1;i<=number;i++) {
-			fact=fact*i;
+		int a,b,c;
+		a=0;b=1;
+
+		System.out.print(a + "," + b);
+		for(int i = 0;i<=number;i++) {
+			c=a+b;
+			a=b;
+			b=c;
+			System.out.print("," + c);
 		}
-		return fact;
+		return " is the factorial of size " + number;
 	}
 		
 }
