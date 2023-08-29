@@ -1,2 +1,2 @@
-# ClientServerCommunication
-A very basic application to show how client and server communication works using sockets.
+# Fibonacii-Networking
+Application to get Fibonacii series of size given by user through java networking classes.
